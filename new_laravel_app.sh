@@ -39,7 +39,7 @@ ROOT_DIR="${WWW_DIR}/${DOMAIN}"
 APP_ROOT_DIR="${ROOT_DIR}/public_html"
 NGINX_AVAILABLE="/etc/nginx/sites-available/${DOMAIN}"
 NGINX_ENABLED="/etc/nginx/sites-enabled/${DOMAIN}"
-DB_NAME=$(echo "${APP_NAME,,}" | tr '-' '_')
+DB_NAME=$(echo "$APP_NAME" | tr '[:upper:]' '[:lower:]' | tr '-' '_')
 SCRIPT_DIR=$(pwd)
 CURRENT_USER=$(whoami)
 
